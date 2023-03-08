@@ -1,0 +1,30 @@
+h1 {
+    margin: 0;
+}
+#home-header {
+    box-shadow: 0 0 15px black;
+    padding: 2vw;
+    background-color: rgba(242, 115, 4, 1);
+    color: rgb(0, 0, 0);
+}
+
+/* Color Theme Swatches in Hex */
+.UI/UX-1-hex { color: #010326; }
+.UI/UX-2-hex { color: #010B40; }
+.UI/UX-3-hex { color: #F0F2F1; }
+.UI/UX-4-hex { color: #F27405; }
+.UI/UX-5-hex { color: #F25C05; }
+
+/* Color Theme Swatches in RGBA */
+.UI/UX-1-rgba { color: rgba(0, 2, 38, 1); }
+.UI/UX-2-rgba { color: rgba(1, 10, 63, 1); }
+.UI/UX-3-rgba { color: rgba(239, 242, 241, 1); }
+.UI/UX-4-rgba { color: rgba(242, 115, 4, 1); }
+.UI/UX-5-rgba { color: rgba(242, 91, 4, 1); }
+
+/* Color Theme Swatches in HSLA */
+.UI/UX-1-hsla { color: hsla(236, 96, 7, 1); }
+.UI/UX-2-hsla { color: hsla(230, 96, 12, 1); }
+.UI/UX-3-hsla { color: hsla(151, 8, 94, 1); }
+.UI/UX-4-hsla { color: hsla(28, 96, 48, 1); }
+.UI/UX-5-hsla { color: hsla(22, 96, 48, 1); }
