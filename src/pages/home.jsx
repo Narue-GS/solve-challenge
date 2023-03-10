@@ -4,7 +4,6 @@ import Car from "../components/home/car.jsx"
 
 
 const Home = () => {
-	
 	const calcNotes = (value, notes) => {
   	let notesCount = []
   	notes.map((note, i) => {
@@ -18,7 +17,7 @@ const Home = () => {
 	const calc = (products) =>{
 		let total = 0
 		products.map((product) => total += parseFloat(product.price))
-		const notesCount = calcNotes(total, [100, 50, 20, 10, 5, 1])
+		const notesCount = calcNotes(total, [100, 50, 20, 10, 5, 2, 1])
 		return {totalValue: total, notes: notesCount}
 	}
     return(

@@ -1,6 +1,8 @@
+import "../../styles/home/product.css"
+
 const Product = ({data}) => {
 	return(
-		<div>
+		<div id="car-product">
 			<span>{data.name}</span>
 			<span>R${data.price}</span>
 		</div>

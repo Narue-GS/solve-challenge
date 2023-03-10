@@ -1,11 +1,17 @@
 import "../../styles/home/car.css"
 import {useState} from "react";
-import InputMask from 'react-input-mask';
-import Product from "./product.jsx"
+import ProductList from "./productList.jsx"
+import CheckModal from "./checkModal.jsx"
 
 const Car = ({calc}) => {
 	const [productList, setProductList] = useState([{name:"test", price: 999.99}])
 	const [newProduct, setNewProduct] = useState({name:"", price:""})
+	const [showModal, setShowModal] = useState(false);
+	const [total, setTotal] = useState(calc(productList).totalValue)
+	const [notes, setNotes] = useState(calc(productList).notes.map((note)=>{
+		return note
+	}))
+
 	const intAndFloat = new RegExp("[0-9]|[.]");	
 	const noRepeatedDots = new RegExp("[.]{2}")
 
@@ -47,6 +53,20 @@ const Car = ({calc}) => {
 			}
 	}
 
+	const cleanList = () => {
+		setProductList([])
+	}
+
+	const updateModal = () => {
+		if(showModal){
+			setShowModal(false)
+		}
+		else {
+			setTotal(calc(productList).totalValue)
+			setShowModal(true)
+		}
+	}
+
 	return(
 		<section className="container">
 			<div id="product-register-content">
@@ -63,15 +83,15 @@ const Car = ({calc}) => {
 					/>
 					<button onClick={addProduct}>Adicionar</button>
 				</div>
-				<div>
-					{ productList.map((product) => {
-						return <Product data={product}/>
-					})}
-				</div>
+				<ProductList products={productList} />
 				<div id="product-register-menu">
-          <button onClick={() => console.log(calc(productList))}>Concluir</button>
+          <button onClick={updateModal}>Concluir</button>
  	      </div>
 			</div>
+			{showModal?
+				<CheckModal total={total} clean={cleanList} close={updateModal} products={productList} notes={notes}/>
+				: <></>
+			}
 		</section>
 	)
 }

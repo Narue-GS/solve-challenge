@@ -1,0 +1,26 @@
+#car-product-list {
+  display: flex;
+  border-radius: 6px;
+  margin-top: 2vw;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 5px;
+  max-height: 50vh;
+  overflow: scroll;
+  padding: 1vw;
+}
+#car-product {
+	box-shadow: 0 0 5px black;
+	border-radius: 4px;
+	width: 49%;
+	display: flex;
+	justify-content: space-evenly;
+	place-items: center;
+	padding: 1vw;
+	font-size: clamp(10px, 0.75vw + 0.75em, 3.5em)
+}
+#car-product span {
+	display: flex;
+	max-width: 50%;
+	overflow: scroll;
+}
