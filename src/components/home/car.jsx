@@ -43,7 +43,7 @@ const Car = ({calc}) => {
 
 	const addProduct = () => {
 		let checkedProduct = {id:newProduct.id, name: newProduct.name,price: parseFloat(newProduct.price).toFixed(2)}
-		if(checkedProduct.name === "" || checkedProduct.value === ""){
+		if(checkedProduct.name === "" || checkedProduct.price === "NaN"){
 			alert("por favor, preencha todos os campos")
 		} else {
 				if(productList.length < 10){
