@@ -1,11 +1,12 @@
 import "../../styles/home/car.css"
+import {v4 as uuidv4} from 'uuid';
 import {useState} from "react";
 import ProductList from "./productList.jsx"
 import CheckModal from "./checkModal.jsx"
 
 const Car = ({calc}) => {
 	const [productList, setProductList] = useState([])
-	const [newProduct, setNewProduct] = useState({name:"", price:""})
+	const [newProduct, setNewProduct] = useState({id: uuidv4(), name:"", price:""})
 	const [showModal, setShowModal] = useState(false);
 	const [total, setTotal] = useState(calc(productList).totalValue)
 	let notes = calc(productList).notes.map((note)=>{
@@ -41,7 +42,7 @@ const Car = ({calc}) => {
 	}
 
 	const addProduct = () => {
-		let checkedProduct = {name: newProduct.name,price: parseFloat(newProduct.price).toFixed(2)}
+		let checkedProduct = {id:newProduct.id, name: newProduct.name,price: parseFloat(newProduct.price).toFixed(2)}
 		if(checkedProduct.name === "" || checkedProduct.value === ""){
 			alert("por favor, preencha todos os campos")
 		} else {
@@ -50,6 +51,12 @@ const Car = ({calc}) => {
 					setProductList(update)
 				} else alert("máximo de 10 produtos")
 			}
+	}
+
+	const removeProduct = (product) => {
+		let update = productList.map((i) => {return i})
+		update.splice(update.indexOf(product), 1)
+		setProductList(update)
 	}
 
 	const cleanList = () => {
@@ -65,7 +72,7 @@ const Car = ({calc}) => {
 			setShowModal(true)
 		}
 	}
-
+	
 	return(
 		<section className="container">
 			<div id="car-content">
@@ -80,11 +87,11 @@ const Car = ({calc}) => {
 						onChange={hendlePrice} 
 						type="text"
 					/>
-					<button onClick={addProduct}>Adicionar</button>
+					<button onClick={addProduct} className="form-button" id="add-product">Adicionar</button>
 				</div>
-				<ProductList products={productList} />
+				<ProductList products={productList} remove={removeProduct} mode={"edit"}/>
 				<div id="product-register-menu">
-          <button onClick={updateModal}>Concluir</button>
+          <button onClick={updateModal} className="form-button">Concluir</button>
  	      </div>
 			</div>
 			{showModal?
