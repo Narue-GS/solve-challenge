@@ -9,9 +9,8 @@ const Home = () => {
   	notes.map((note, i) => {
 			note = parseInt(value/notes[i])
       value = value%notes[i]
-    	notesCount.push(note)
+    	return notesCount.push(note)
 		})
-
   	return notesCount
 	}
 	const calc = (products) =>{

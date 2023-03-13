@@ -15,6 +15,7 @@ const CheckModal = ({total, close, products, notes, clean}) => {
 						<p>Serão necessárias(no mínimo):</p>
 						{notes.map((i, next) => {
 							if(i>0) return <p id="note">{i} notas de {typeOfNotes[next]}</p>
+							else return <></>
 						})}
 					</div>
 				</div>
