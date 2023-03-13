@@ -22,8 +22,8 @@ const Home = () => {
 	}
     return(
         <div id="home">
-            <Header />
-						<Car calc={calc}/>
+					<Header />
+	    		<Car calc={calc}/>
         </div>
     )
 }
