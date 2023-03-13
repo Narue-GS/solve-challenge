@@ -4,14 +4,19 @@
 	background-color: rgba(240, 240, 255, 0.9);
 	margin-top: 3.5vw;
 	padding: 2vw;
+	z-index: 2;
 	border-radius: 6px;
 }
-
+.box-shadow {
+	position: absolute;
+	min-width: 100vw;
+	min-height: 90vh;
+	background-color: rgba(0, 0, 0, 0.5);
+}
 .modal-container {
 	position: absolute;
 	min-width: 100vw;
 }
-
 #notes-box {
 	width: 30%;
 	background-color: rgba(190, 190, 205, 1);
@@ -22,7 +27,6 @@
 	padding: 0.5vw;
 	border-radius: 4px;
 }
-
 #car-modal-menu {
 	width: 100%;
 	display: flex;
@@ -33,11 +37,4 @@
 	padding: 1vw;
 }
 
-.form-button {
-	font-size: clamp(8px, 0.75vw + 0.75em, 3em);
-	background-color: rgba(242, 115, 4, 1);
-	padding: 1vw;
-	border: none;
-	border-radius: 3px;
 
-}

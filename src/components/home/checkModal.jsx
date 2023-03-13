@@ -4,8 +4,8 @@ import ProductList from "./productList.jsx"
 const CheckModal = ({total, close, products, notes, clean}) => {
 	const typeOfNotes = [100, 50, 20, 10, 5, 2, 1]
 	return(
-		<div className="container modal-container" onClick={close}>
-			<div className="box-shadow"></div>
+		<div className="container modal-container">
+			<div className="box-shadow" onClick={close}></div>
 			<div id="car-modal">
 				<h1>Total</h1>
 				<div>
@@ -27,9 +27,7 @@ const CheckModal = ({total, close, products, notes, clean}) => {
 					}} className="form-button"
 					>confirmar</button>
 					<button onClick={() => {
-						alert("compra cancelada com sucesso") 
             close()
-            clean()
 					}} className="form-button">cancelar</button>
 				</div>
 			</div>
