@@ -1,3 +1,10 @@
 body {
   background-color: rgba(1, 10, 63, 1);
 }
+.form-button {
+	font-size: clamp(8px, 0.75vw + 0.75em, 3em);
+	background-color: rgba(242, 115, 4, 1);
+	padding: 0.75vw;
+	border: none;
+	border-radius: 6px;
+}
