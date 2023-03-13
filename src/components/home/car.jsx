@@ -4,13 +4,13 @@ import ProductList from "./productList.jsx"
 import CheckModal from "./checkModal.jsx"
 
 const Car = ({calc}) => {
-	const [productList, setProductList] = useState([{name:"test", price: 999.99}])
+	const [productList, setProductList] = useState([])
 	const [newProduct, setNewProduct] = useState({name:"", price:""})
 	const [showModal, setShowModal] = useState(false);
 	const [total, setTotal] = useState(calc(productList).totalValue)
-	const [notes, setNotes] = useState(calc(productList).notes.map((note)=>{
+	let notes = calc(productList).notes.map((note)=>{
 		return note
-	}))
+	})
 
 	const intAndFloat = new RegExp("[0-9]|[.]");	
 	const noRepeatedDots = new RegExp("[.]{2}")
@@ -21,8 +21,7 @@ const Car = ({calc}) => {
 				...current,
 				name: e.target.value
 			}
-		},
-		)
+		},)
 	}
 
 	const hendlePrice = (e) => {
@@ -31,7 +30,7 @@ const Car = ({calc}) => {
 
 		if(intAndFloat.test(letter) || newPrice === ""){
 			let count = 0
-			newPrice.split("").map((i) => i == "."? count++ : count = count)
+			newPrice.split("").map((i) => i === "."? count++ : count = count)
 			if (!noRepeatedDots.test(newPrice) && count<2) setNewProduct(current => {
       	return{
         	...current,
