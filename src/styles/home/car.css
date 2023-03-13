@@ -2,18 +2,33 @@
   display: flex;
   justify-content: center;
 }
-#product-register-content { 
+#car-content { 
   width: 60%;
 	min-height: 30vh;
-	padding: 2vw;
+
+	padding: 1vw;
 	background-color: rgba(240, 240, 255, 1);
 	margin-top: 5vw;
 	text-align: center;
 	border-radius: 6px
+}
+#car-content h1{
+	font-size: clamp(20px, 2vw + 2em, 7em);
+	margin: 0;
+}
+#car-content span{
+	font-size: clamp(12px, 0.75vw + 0.75em, 3em)
 }
 #product-register {
 	margin-top: 2vw;
 	display: flex;
 	justify-content: center;
 	gap: 2vw
+}
+
+#product-register input{
+	border: none;
+	outline: none;
+	padding: 5px;
+	font-size: clamp(12px, 0.75vw + 0.75em, 3em)
 }

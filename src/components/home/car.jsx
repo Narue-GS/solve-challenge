@@ -68,7 +68,7 @@ const Car = ({calc}) => {
 
 	return(
 		<section className="container">
-			<div id="product-register-content">
+			<div id="car-content">
 				<h1>Seu carrinho</h1>
 				<span>Adicione um novo produto!(max.10)</span>
 				<hr/>
