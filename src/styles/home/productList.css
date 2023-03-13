@@ -24,6 +24,7 @@
 	display: flex;
 	width: 85%;
 	justify-content: space-between;
+	place-items: center;
 	overflow: scroll;
 	z-index: 0;
 }
@@ -58,3 +59,14 @@
 	}
 }
 
+@media screen and (max-width: 600px) {
+	#car-product-list {
+		justify-content: center;
+	}
+	#car-product {
+		width: 98%;
+	}
+	#edit-product {
+		height: 100%;
+	}
+}
