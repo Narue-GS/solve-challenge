@@ -14,7 +14,7 @@ const CheckModal = ({total, close, products, notes, clean}) => {
 					<div id="notes-box">
 						<p>Serão necessárias(no mínimo):</p>
 						{notes.map((i, next) => {
-							if(i>0) return <p id="note">{i} notas de {typeOfNotes[next]}</p>
+							if(i>0) return <p id="note" key={next}>{i} notas de {typeOfNotes[next]}</p>
 							else return <></>
 						})}
 					</div>

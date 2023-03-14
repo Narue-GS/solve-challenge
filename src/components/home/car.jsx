@@ -31,7 +31,7 @@ const Car = ({calc}) => {
 
 		if(intAndFloat.test(letter) || newPrice === ""){
 			let count = 0
-			newPrice.split("").map((i) => i === "."? count++ : count = count)
+			newPrice.split("").map((i) => i === "."? count++ : null)
 			if (!noRepeatedDots.test(newPrice) && count<2) setNewProduct(current => {
       	return{
         	...current,
@@ -51,6 +51,12 @@ const Car = ({calc}) => {
 					setProductList(update)
 				} else alert("máximo de 10 produtos")
 			}
+		setNewProduct(current => {
+			return{
+				...current,
+				id: uuidv4()
+			}
+		},)
 	}
 
 	const removeProduct = (product) => {
