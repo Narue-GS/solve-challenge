@@ -1,11 +1,11 @@
 import "../../styles/home/car.css"
 import {v4 as uuidv4} from 'uuid';
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import ProductList from "./productList.jsx"
 import CheckModal from "./checkModal.jsx"
 
 const Car = ({calc}) => {
-	const [productList, setProductList] = useState([])
+	const [productList, setProductList] = useState(JSON.parse(localStorage.getItem("productStorage")))
 	const [newProduct, setNewProduct] = useState({id: uuidv4(), name:"", price:""})
 	const [showModal, setShowModal] = useState(false);
 	const [total, setTotal] = useState(calc(productList).totalValue)
@@ -49,6 +49,7 @@ const Car = ({calc}) => {
 				if(productList.length < 10){
 					const update = [...productList, checkedProduct]
 					setProductList(update)
+					localStorage.setItem("productStorage", JSON.stringify(update));
 				} else alert("máximo de 10 produtos")
 			}
 		setNewProduct(current => {
@@ -63,6 +64,7 @@ const Car = ({calc}) => {
 		let update = productList.map((i) => {return i})
 		update.splice(update.indexOf(product), 1)
 		setProductList(update)
+		localStorage.setItem("productStorage", JSON.stringify(update));
 	}
 
 	const cleanList = () => {
